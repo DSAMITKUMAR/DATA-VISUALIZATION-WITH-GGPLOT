@@ -1,0 +1,105 @@
+---
+title: "DATA VIS WITH R DesiDime"
+output: html_document
+---
+
+```{r}
+
+# Load the ggplot2 package
+library(ggplot2)
+mtcars
+
+# Explore the mtcars data frame with str()
+str(mtcars)
+
+# Execute the following command
+ggplot(mtcars, aes(x = cyl, y = mpg)) + geom_point()
+
+# Change the command below so that cyl is treated as factor
+ggplot(mtcars, aes(x = factor(cyl), y = mpg)) + geom_point()
+
+```
+
+ Let's dive a little deeper to explore the three main topics in this course: The data, aesthetics, and geom layers.
+ 
+```{r}
+# A scatter plot has been made for you
+ggplot(mtcars, aes(x = wt, y = mpg)) + geom_point()
+
+# Replace ___ with the correct column
+ggplot(mtcars, aes(x = wt, y = mpg, color = disp)) + geom_point()
+
+# Replace ___ with the correct column
+ggplot(mtcars, aes(x = wt, y = mpg, size = disp)) + geom_point()
+
+#this will give me error because shape only deal with categorical data whereas shape here disp is a continous variable.
+ggplot(mtcars, aes(x = wt, y = mpg, shape = disp)) + geom_point()
+
+```
+ 
+ Diamond data 
+ 
+```{r}
+
+#how to check avaliable datasets in R
+library(MASS)
+data()
+library(ggplot2)
+airquality
+
+# Explore the diamonds data frame with str()
+str(airquality)
+
+# Add geom_point() with +
+ggplot(airquality, aes(x = Month, y = Temp)) + geom_point()
+
+
+# Add geom_point() and geom_smooth() with +
+ggplot(airquality, aes(x = Month, y = Temp)) + geom_point() + geom_smooth()
+
+# Copy the above command but show only the smooth line
+ggplot(airquality, aes(x = Month, y = Temp)) + geom_smooth()
+
+
+ggplot(airquality, aes(x = Month, y = Temp,color = Day)) + geom_smooth()
+
+ggplot(airquality, aes(x = Month, y = Temp,color = Day)) + geom_point(alpha=0.4)
+
+
+```
+
+ 
+ 
+```{r}
+library(ggplot2)
+airquality
+# Create the object containing the data and aes layers: dia_plot
+dia_plot <- ggplot(airquality, aes(x = Month, y = Temp))
+
+
+# Add a geom layer with + and geom_point()
+dia_plot + geom_point()
+
+# Add the same geom layer, but with aes() inside
+dia_plot + geom_point(aes(color = Day)
+
+          
+```
+ 
+
+ base package and ggplot2, part 1 - plot
+ 
+```{r}
+# Plot the correct variables of mtcars
+plot(mtcars$___, mtcars$___, ___ = mtcars$___)
+
+# Change cyl inside mtcars to a factor
+mtcars$fcyl <- as.factor(___$___)
+
+# Make the same plot as in the first instruction
+
+
+
+```
+ 
+ 
